@@ -1,0 +1,369 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={covidreport},
+  pdfauthor={PANG KAM HING},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{covidreport}
+\author{PANG KAM HING}
+\date{2022-08-06}
+
+\begin{document}
+\maketitle
+
+\hypertarget{introduction}{%
+\subsection{Introduction}\label{introduction}}
+
+COVID-19 has become a global pandemic. Analyzing the patterns can give a
+deeper understanding of the virus. the report cites Johns Hopkins github
+site, Importing the time series of COVID-19 case(US and global).
+
+\hypertarget{library}{%
+\subsection{Library}\label{library}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages --------------------------------------- tidyverse 1.3.2 --
+## v ggplot2 3.3.6     v purrr   0.3.4
+## v tibble  3.1.7     v dplyr   1.0.9
+## v tidyr   1.2.0     v stringr 1.4.0
+## v readr   2.1.2     v forcats 0.5.1
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(tinytex)}
+\FunctionTok{library}\NormalTok{(lubridate)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 载入程辑包：'lubridate'
+## 
+## The following objects are masked from 'package:base':
+## 
+##     date, intersect, setdiff, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(cowplot)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## 载入程辑包：'cowplot'
+## 
+## The following object is masked from 'package:lubridate':
+## 
+##     stamp
+\end{verbatim}
+
+\hypertarget{importing-data}{%
+\subsection{Importing Data}\label{importing-data}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{URL }\OtherTok{=} \StringTok{\textquotesingle{}https://raw.githubusercontent.com/CSSEGISandData/COVID{-}19/master/csse\_covid\_19\_data/csse\_covid\_19\_time\_series/\textquotesingle{}}
+\NormalTok{time\_series\_covid19\_confirmed\_US.csv }\OtherTok{=} \FunctionTok{str\_c}\NormalTok{(URL,}\StringTok{\textquotesingle{}time\_series\_covid19\_confirmed\_US.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{time\_series\_covid19\_confirmed\_global.csv }\OtherTok{=} \FunctionTok{str\_c}\NormalTok{(URL,}\StringTok{\textquotesingle{}time\_series\_covid19\_confirmed\_global.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{time\_series\_covid19\_deaths\_US.csv }\OtherTok{=} \FunctionTok{str\_c}\NormalTok{(URL,}\StringTok{\textquotesingle{}time\_series\_covid19\_deaths\_US.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{time\_series\_covid19\_deaths\_global.csv }\OtherTok{=} \FunctionTok{str\_c}\NormalTok{(URL,}\StringTok{\textquotesingle{}time\_series\_covid19\_deaths\_global.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{time\_series\_covid19\_recovered\_global.csv}\OtherTok{=}\FunctionTok{str\_c}\NormalTok{(URL,}\StringTok{\textquotesingle{}time\_series\_covid19\_recovered\_global.csv\textquotesingle{}}\NormalTok{)}
+\NormalTok{CUS}\OtherTok{=}\FunctionTok{read.csv}\NormalTok{(time\_series\_covid19\_confirmed\_US.csv)}
+\NormalTok{CGL}\OtherTok{=}\FunctionTok{read.csv}\NormalTok{(time\_series\_covid19\_confirmed\_global.csv)}
+\NormalTok{DUS}\OtherTok{=}\FunctionTok{read.csv}\NormalTok{(time\_series\_covid19\_deaths\_US.csv)}
+\NormalTok{DGL}\OtherTok{=}\FunctionTok{read.csv}\NormalTok{(time\_series\_covid19\_deaths\_global.csv)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-cleaning}{%
+\subsection{Data cleaning}\label{data-cleaning}}
+
+First,To reduce unnecessary variables, in this report we mainly study
+the relationship between latitude , case and Case fatality ratio .
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{CUS}\OtherTok{\textless{}{-}}\NormalTok{CUS}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{UID,}\SpecialCharTok{{-}}\NormalTok{iso2,}\SpecialCharTok{{-}}\NormalTok{iso3,}\SpecialCharTok{{-}}\NormalTok{code3,}\SpecialCharTok{{-}}\NormalTok{FIPS,}\SpecialCharTok{{-}}\NormalTok{Admin2,}\SpecialCharTok{{-}}\NormalTok{Province\_State,}\SpecialCharTok{{-}}\NormalTok{Country\_Region)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols=} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{),}\AttributeTok{names\_to =}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,}\AttributeTok{values\_to =} \StringTok{"Case\_Number"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{Date=}\FunctionTok{as.Date}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,Date),}\AttributeTok{format=}\StringTok{\textquotesingle{}\%m.\%d.\%y\textquotesingle{}}\NormalTok{))}
+\NormalTok{CGL}\OtherTok{\textless{}{-}}\NormalTok{CGL}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols=} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{),}\AttributeTok{names\_to =}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,}\AttributeTok{values\_to =} \StringTok{"Case\_Number"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{Date=}\FunctionTok{as.Date}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,Date),}\AttributeTok{format=}\StringTok{\textquotesingle{}\%m.\%d.\%y\textquotesingle{}}\NormalTok{))}
+\NormalTok{DUS}\OtherTok{\textless{}{-}}\NormalTok{DUS}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{select}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{UID,}\SpecialCharTok{{-}}\NormalTok{iso2,}\SpecialCharTok{{-}}\NormalTok{iso3,}\SpecialCharTok{{-}}\NormalTok{code3,}\SpecialCharTok{{-}}\NormalTok{FIPS,}\SpecialCharTok{{-}}\NormalTok{Admin2,}\SpecialCharTok{{-}}\NormalTok{Province\_State)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols=} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{),}\AttributeTok{names\_to =}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,}\AttributeTok{values\_to =} \StringTok{"Case\_Number"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{Date=}\FunctionTok{as.Date}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,Date),}\AttributeTok{format=}\StringTok{\textquotesingle{}\%m.\%d.\%y\textquotesingle{}}\NormalTok{))}
+\NormalTok{DGL}\OtherTok{\textless{}{-}}\NormalTok{DGL}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{pivot\_longer}\NormalTok{(}\AttributeTok{cols=} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{),}\AttributeTok{names\_to =}\StringTok{\textquotesingle{}Date\textquotesingle{}}\NormalTok{,}\AttributeTok{values\_to =} \StringTok{"Case\_Number"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{Date=}\FunctionTok{as.Date}\NormalTok{(}\FunctionTok{gsub}\NormalTok{(}\StringTok{\textquotesingle{}X\textquotesingle{}}\NormalTok{,}\StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{,Date),}\AttributeTok{format=}\StringTok{\textquotesingle{}\%m.\%d.\%y\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{data-transfer-for-case-fatality-ratio-plot}{%
+\subsection{Data Transfer for Case Fatality ratio
+plot}\label{data-transfer-for-case-fatality-ratio-plot}}
+
+Summarize the US and Global COIVD-19 case by date. In order to avoid too
+few samples and too many fluctuations in the early stage of the
+epidemic, we filter the top 10,0000 cases . After this,We citing Case
+fatality ratio(CFR) by World Health Organization,to create fatality
+ration by date in US and global.
+\href{https://www.who.int/news-room/commentaries/detail/estimating-mortality-from-covid-19}{The
+World Health Organization states}
+
+\[
+  Case\ Fatality\  ratio(CFR,in\%) = \frac{Number\ of\ deaths\ from disease}{Number\ of\ comfirmed\ cases \ of\ individuals} \ \times 100 
+\]
+
+We would cumulatively use this CFR function.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{USCASE }\OtherTok{\textless{}{-}}\NormalTok{CUS}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Date)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{US\_case=}\FunctionTok{sum}\NormalTok{(Case\_Number))}
+\NormalTok{GLCASE }\OtherTok{\textless{}{-}}\NormalTok{CGL}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Date)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{GL\_case=}\FunctionTok{sum}\NormalTok{(Case\_Number))}
+\NormalTok{USDIED}\OtherTok{\textless{}{-}}\NormalTok{DUS}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Date)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{USD\_case=}\FunctionTok{sum}\NormalTok{(Case\_Number))}
+\NormalTok{GLDIED}\OtherTok{\textless{}{-}}\NormalTok{DGL}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Date)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{GLD\_case=}\FunctionTok{sum}\NormalTok{(Case\_Number))}
+\NormalTok{USCASE}\OtherTok{\textless{}{-}}\FunctionTok{merge}\NormalTok{(USDIED,USCASE,}\AttributeTok{by=}\StringTok{"Date"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{filter}\NormalTok{(US\_case}\SpecialCharTok{\textgreater{}}\DecValTok{100000}\NormalTok{)}
+\NormalTok{GLCASE}\OtherTok{\textless{}{-}}\FunctionTok{merge}\NormalTok{(GLDIED,GLCASE,}\AttributeTok{by=}\StringTok{"Date"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{filter}\NormalTok{(GL\_case}\SpecialCharTok{\textgreater{}}\DecValTok{100000}\NormalTok{)}
+\NormalTok{USCFR}\OtherTok{\textless{}{-}}\NormalTok{USCASE}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{US\_CFR=}\NormalTok{USD\_case}\SpecialCharTok{*}\DecValTok{100}\SpecialCharTok{/}\NormalTok{US\_case)}
+\NormalTok{GLCFR}\OtherTok{\textless{}{-}}\NormalTok{GLCASE}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{GL\_CFR=}\NormalTok{GLD\_case}\SpecialCharTok{*}\DecValTok{100}\SpecialCharTok{/}\NormalTok{GL\_case)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{plotting-us-and-global-case-by-date}{%
+\subsection{Plotting US and Global case by
+Date}\label{plotting-us-and-global-case-by-date}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{CASE\_plot}\OtherTok{\textless{}{-}}\FunctionTok{ggplot}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data=}\NormalTok{USCASE,}\FunctionTok{aes}\NormalTok{(Date,US\_case,}\AttributeTok{color=}\StringTok{"US case"}\NormalTok{,))}\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data=}\NormalTok{GLCASE,}\FunctionTok{aes}\NormalTok{(Date,GL\_case,}\AttributeTok{color=}\StringTok{"Global case"}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{ylab}\NormalTok{(}\StringTok{"Case"}\NormalTok{)}\SpecialCharTok{+}\FunctionTok{ggtitle}\NormalTok{(}\StringTok{"COVID{-}19 US and Global case"}\NormalTok{)}
+\NormalTok{CRF\_plot}\OtherTok{\textless{}{-}}\FunctionTok{ggplot}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data=}\NormalTok{USCFR,}\FunctionTok{aes}\NormalTok{(Date,US\_CFR,}\AttributeTok{color=}\StringTok{"US CFR"}\NormalTok{))}\SpecialCharTok{+}
+  \FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data=}\NormalTok{GLCFR,}\FunctionTok{aes}\NormalTok{(Date,GL\_CFR,}\AttributeTok{color=}\StringTok{"Global CFR"}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{ylab}\NormalTok{(}\StringTok{"CFR"}\NormalTok{)}\SpecialCharTok{+}\FunctionTok{ggtitle}\NormalTok{(}\StringTok{"COVID{-}19 Case fatality ratio(CFR)"}\NormalTok{)}\SpecialCharTok{+}\FunctionTok{scale\_y\_continuous}\NormalTok{(}\AttributeTok{limits =} \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{8}\NormalTok{))}
+\FunctionTok{plot\_grid}\NormalTok{(CASE\_plot,CRF\_plot,}\AttributeTok{nrow=}\DecValTok{2}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{COVIDREPORT_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\hypertarget{tiding-relationship-about-covid-19-cfr-with-latitude-in-usa}{%
+\subsection{Tiding Relationship about COVID-19 CFR with latitude in
+USA}\label{tiding-relationship-about-covid-19-cfr-with-latitude-in-usa}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{LCase }\OtherTok{\textless{}{-}}\NormalTok{CUS}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Lat)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{C\_Lat=}\FunctionTok{sum}\NormalTok{(Case\_Number))}
+\NormalTok{LDied}\OtherTok{\textless{}{-}}\NormalTok{DUS}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{group\_by}\NormalTok{(Lat)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{summarise}\NormalTok{(}\AttributeTok{D\_Lat=}\FunctionTok{sum}\NormalTok{(Case\_Number))}
+\NormalTok{LCFR}\OtherTok{\textless{}{-}}\FunctionTok{merge}\NormalTok{(LDied,LCase,}\AttributeTok{by=}\StringTok{"Lat"}\NormalTok{)}\SpecialCharTok{\%\textgreater{}\%}\FunctionTok{mutate}\NormalTok{(}\AttributeTok{L\_CFR=}\NormalTok{D\_Lat}\SpecialCharTok{*}\DecValTok{100}\SpecialCharTok{/}\NormalTok{C\_Lat)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{ploting-the-relationship-between-cfr-with-latitude}{%
+\subsection{Ploting the relationship between CFR with
+latitude:}\label{ploting-the-relationship-between-cfr-with-latitude}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(LCFR,}\FunctionTok{aes}\NormalTok{(Lat,L\_CFR,}\AttributeTok{color=}\StringTok{"US CFR by Latitdue"}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{geom\_line}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{COVIDREPORT_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\hypertarget{summarize-visualization}{%
+\subsection{Summarize visualization}\label{summarize-visualization}}
+
+After these two visualization are done,we can see first visualization
+show the US CFR is slightly less than the world then gradually
+converge.There may be many factors make the CFR under world average,such
+as medical level, population structure, epidemic prevention policy. And
+we can see the CFR are significant and sustained decline after
+2022-July. This may be related to virus mutation or better response plan
+for counter COVID-19. According to the second visualization,these data
+show Latitude and mortality are roughly linearly independent,but be
+caution this CFR may lower average when latitude over 50, it is probably
+just a coincidence or partly related temperature, etc.\\
+
+\hypertarget{modeling-us-cfr}{%
+\subsection{Modeling US CFR}\label{modeling-us-cfr}}
+
+Assuming that the accumulated by date that known cases can be fitted
+with a polynomial function.we can assume: \[
+CFR\approx\frac{Case}{b*Case^{1.5}+a*Case+c} \ \times 100 
+\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{DATA}\OtherTok{=}\FunctionTok{mutate}\NormalTok{(USCFR,}\AttributeTok{input=}\NormalTok{US\_case}\SpecialCharTok{/}\DecValTok{1000000}\NormalTok{)}
+\NormalTok{MODEL }\OtherTok{\textless{}{-}}\FunctionTok{nls}\NormalTok{(US\_CFR }\SpecialCharTok{\textasciitilde{}}\DecValTok{100}\SpecialCharTok{*}\NormalTok{input}\SpecialCharTok{/}\NormalTok{(b}\SpecialCharTok{*}\NormalTok{input}\SpecialCharTok{\^{}}\FloatTok{1.5}\SpecialCharTok{+}\NormalTok{a}\SpecialCharTok{*}\NormalTok{input}\SpecialCharTok{+}\NormalTok{c),}\AttributeTok{start=}\FunctionTok{list}\NormalTok{(}\AttributeTok{a=}\DecValTok{1}\NormalTok{,}\AttributeTok{b=}\DecValTok{1}\NormalTok{,}\AttributeTok{c=}\DecValTok{1}\NormalTok{),}\AttributeTok{data=}\NormalTok{DATA,}\AttributeTok{algorithm =}\StringTok{"port"}\NormalTok{ )}
+\FunctionTok{ggplot}\NormalTok{()}\SpecialCharTok{+}\FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data=}\NormalTok{USCFR,}\FunctionTok{aes}\NormalTok{(Date,US\_CFR,}\AttributeTok{color=}\StringTok{"US CFR"}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{geom\_line}\NormalTok{(}\AttributeTok{data=}\NormalTok{USCASE,}\FunctionTok{aes}\NormalTok{(Date,}\FunctionTok{fitted}\NormalTok{(MODEL),}\AttributeTok{color=}\StringTok{"Fitted function"}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{COVIDREPORT_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(MODEL)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Formula: US_CFR ~ 100 * input/(b * input^1.5 + a * input + c)
+## 
+## Parameters:
+##   Estimate Std. Error t value Pr(>|t|)    
+## a   0.7775     0.3069   2.533   0.0115 *  
+## b  10.9105     0.1241  87.916   <2e-16 ***
+## c   5.4590     0.1900  28.734   <2e-16 ***
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 0.3035 on 865 degrees of freedom
+## 
+## Algorithm "port", convergence message: relative convergence (4)
+\end{verbatim}
+
+This model are good fitted the CFR.We set the maximum degree of this
+polynomial to 1.5, which works well. This polynomial hyperparameter may
+be related to the rate of infection and the ability of the virus to
+mutate.
+
+\hypertarget{bias}{%
+\subsection{Bias}\label{bias}}
+
+Firstly,This known COVID-19 cases are not total cases on the world,the
+known COVID-19 cases are according to local nucleic acid and testing
+policies.In the early days of the epidemic, there were not enough
+nucleic acid tests in the world. And now, the rate of voluntary nucleic
+acid testing may be lower.when died cases better detection,these cases
+would increase the Case fatality ratio,But it will be overestimated than
+reality.
+
+Secondly,Testing policies vary around the world,If we get in conclusion
+about the US CFR is lower the world,then We can not directly say that
+the true death rate is like this.Because the US testing policies may
+stricter than other countries,Make the denominator of CFR larger.
+
+In conclusion,This data shows the statistics of COVID-19 in detail, but
+we need to summarize more other data such as population, demographics,
+temperature, policy impact. to prove the connection between these data
+and reality.
+
+\hypertarget{reference}{%
+\subsection{Reference:}\label{reference}}
+
+COVID-19 Johns Hopkins github Data source:
+
+\hypertarget{httpsgithub.comcssegisanddatacovid-19treemastercsse_covid_19_datacsse_covid_19_time_series}{%
+\subsection{\texorpdfstring{\url{https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_time_series}}{https://github.com/CSSEGISandData/COVID-19/tree/master/csse\_covid\_19\_data/csse\_covid\_19\_time\_series}}\label{httpsgithub.comcssegisanddatacovid-19treemastercsse_covid_19_datacsse_covid_19_time_series}}
+
+WHO status Case fatality ratio(CFR):
+
+\url{https://www.who.int/news-room/commentaries/detail/estimating-mortality-from-covid-19}
+
+\end{document}
