@@ -1,0 +1,79 @@
+---
+title: "NYPD"
+author: "PANG KAM HING"
+date: "2022-08-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+## Introduction
+The goal of the results section in an "NYPD Shooting Incident Data (Historic)"(NYPD) is to report the NYPD relationship between date , age and time. these NYPD dataset is obtained from "https ://catalog.data.gov/datase" .
+
+## Importing library and dataset        
+```{r}
+library(tidyverse)
+library(tinytex)
+library(lubridate)
+URL = 'https://data.cityofnewyork.us/api/views/833y-fsy8/rows.csv?accessType=DOWNLOAD'
+NYPD<-read.csv(URL)
+```
+## Tiding data
+For analysis the NYPD dataset,we need transfer the date to format date data.Then create two variables separately.First call "NYPDDATE" for show the date with NYPD case.Second call "NYPDAGELIST" for plotting the age about NYPD case to look at the relationship between age and number of cases in different Years.
+```{r}
+NYPD<-NYPD%>%mutate(DATE = as.Date(OCCUR_DATE,format="%m/%d/%Y"))
+NYPDDATE<-NYPD%>%group_by(DATE)%>%summarise(TOTAL=n())
+
+
+YEARLIST=group_split(filter(NYPD,VIC_AGE_GROUP != "UNKNOWN"),year=as.integer(format(DATE, '%Y')))
+NYPDAGE = NULL
+for(val in YEARLIST)
+{
+  theYEAR = val['year'][[1]][[1]]
+  NYPDAGE=rbind(NYPDAGE,mutate(summarise(group_by(val,VIC_AGE_GROUP),AGE_TOTAL = n()),YEAR = theYEAR))
+}
+```
+## Visualization
+```{r}
+ggplot(NYPDDATE,aes(DATE,TOTAL,color="Total Cases by date"))+geom_line()+ggtitle("Plotting NYPD Shooting Incident Data by date")
+```
+```{r}
+ggplot(NYPDAGE,aes(YEAR,AGE_TOTAL,color = VIC_AGE_GROUP))+geom_line()+ggtitle("Plotting NYPD Case in different years by age group")
+```
+## Explain Visualization
+From the first graph we can see the NYPD shooting case by days usually on a smooth curve,but some months(2020 JULY)
+may have a potentially unstable surge,This could be an unusual event such as an economic collapse, a natural
+disaster, or a disease.
+On second graph,there show the largest incident case by age group usually are 25-44 or 18-24,after 2015 the largest age group always is 25-44.
+Other age groups are at a lower level.
+
+## Finding more statistical relationship
+To find more patterns, we look at the total number of crimes per minute to see if there is a pattern.In this program,the "NYPDTIME" object summary total case by every 10 minutes.
+```{r}
+NYPDTIME = mutate(NYPD,TIME = round(as.numeric(hms(OCCUR_TIME))*6/3600)/6) 
+NYPDTIME<-group_by(NYPDTIME,TIME)%>%summarise(TIMECASE=n())
+ggplot(NYPDTIME,aes(TIME,TIMECASE))+geom_line()
+```
+This graph show AM:6~10 was period of least cases,then time clock 10~20 The number of cases is slowly rising,Then stable to before AM:5 then dropped significantly to AM:4.
+
+## Modeling the NYPD cases in occur time
+we simply set a cubic polynomial function to fit data.
+```{r}
+MODEL <-nls(TIMECASE ~a*TIME^3+b*TIME^2+c*TIME+d,start=list(a=1,b=1,c=1,d=1),data=NYPDTIME,algorithm ="port" )
+ggplot(NYPDTIME,aes(TIME,TIMECASE))+geom_line()+geom_line(data=NYPDTIME,aes(TIME,fitted(MODEL),color="Fitted function"))
+```
+```{r}
+summary(MODEL)
+```
+## Summarize
+In this NYPD data set,we found several statistical relationships in NYPD incident case with years,occur time,age group the fitting model is work very well.
+
+## Bias
+Firstly,It should be noted that the group with the largest number is not necessarily the group with the largest proportion in age group.The age 18-24 may have largest ratio,it only have 6 year spacing that may cause the 18-24 group total popuation are far below 25-44.we can not say the 25-44 had largest ratio by the proportion of the population in NYPD incident.
+
+Secondly,We ignore that the data may have statistical errors.In first graph the case are abnormal growth and marked decline in 2020-July,This may be related to statistical methods not actually happening,we need find more factors to analysis the peak on the graph.
+
+## Source:
+NYPD Shooting Incident Data (Historic): 'https://data.cityofnewyork.us/api/views/833y-fsy8/rows.csv?accessType=DOWNLOAD'
+
